@@ -79,12 +79,13 @@ LoRA 合并时模型会短暂回到 CPU，确保系统内存 ≥ 模型大小 ×
 采样速度不会提升，甚至可能略降（PCIe 通信开销）。目的是显存扩容，不是加速
 不支持显存池化（16GB + 24GB ≠ 40GB），accelerate 按层切分，不是均匀分配
 NVLink 对推理无帮助，accelerate 的跨卡搬运走 PCIe，和 NVLink 无关
----
+
+```
 依赖
 `accelerate >= 0.30.0`
 ComfyUI >= 0.26.0
 PyTorch >= 2.0.0
 多卡环境（`torch.cuda.device_count() >= 2`）
----
+```
 License
 MIT
